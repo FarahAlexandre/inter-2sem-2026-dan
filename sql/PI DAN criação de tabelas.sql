@@ -274,8 +274,8 @@ CREATE TABLE IF NOT EXISTS `dan`.`planta` (
   `Nm_Planta` VARCHAR(45) NOT NULL,
   `Vl_Planta` DECIMAL(10,0) NOT NULL,
   PRIMARY KEY (`Cd_Planta`),
-  INDEX `Cd_Reforma_idx` (`Cd_Obra` ASC) VISIBLE,
-  CONSTRAINT `Cd_Reforma`
+  INDEX `Cd_Obra_idx` (`Cd_Obra` ASC) VISIBLE,
+  CONSTRAINT `Fk_Cd_Obra`
     FOREIGN KEY (`Cd_Obra`)
     REFERENCES `dan`.`obra` (`Cd_Obra`))
 ENGINE = InnoDB
