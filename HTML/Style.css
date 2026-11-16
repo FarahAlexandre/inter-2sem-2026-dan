@@ -291,3 +291,15 @@ main:not(:has(:target))>.view:first-child{display:block}
 .c-sen.row span,.c-svp.row span{font-size:13px;line-height:16px}
 .c-svp span:nth-child(3){text-align:right}
 @media (max-width:760px){.dlg .frow{flex-direction:column}}
+
+/* ===== versão com JavaScript: janelas abertas por classe, cards em grade, avisos ===== */
+[hidden]{display:none!important}
+.modal.aberto{display:flex}
+.rooms-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;min-width:0}
+@media (max-width:760px){.rooms-grid{grid-template-columns:1fr}}
+.x{border:0;cursor:pointer}
+.erro{font:500 12.5px/15px 'Inter',sans-serif;color:#b22424}
+.erro:empty{display:none}
+#flash{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:50}
+.aviso{padding:12px 18px;background:#14181f;color:#fff;border-radius:12px;font:500 13px/16px 'Inter',sans-serif;box-shadow:0 8px 24px rgba(13,18,26,.25)}
+button.btn{font-family:'Inter',sans-serif}
