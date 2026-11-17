@@ -2,6 +2,7 @@
 // A Ana só visualiza: aqui só desenhamos a lista da aba "Meu Projeto".
 
 function desenharPagina() {
+  desenharMensagens();
   const caixa = pegar('lista-projeto');
   if (!caixa) { return; }
   let html = '';

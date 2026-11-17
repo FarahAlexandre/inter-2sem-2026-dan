@@ -61,6 +61,13 @@ const DADOS_INICIAIS = {
     { ambiente: 'Área de serviço', status: 'Não iniciado', aprovado: false }
   ],
 
+  // Mensagens entre a Ana e o arquiteto (a mais nova primeiro)
+  mensagens: [
+    { id: 3, de: 'rafael', para: 'ana', assunto: 'Proposta v3 do seu projeto', texto: 'Olá, Ana! Já deixei a proposta v3 disponível na aba Serviços e Propostas. Se tiver qualquer dúvida sobre os equipamentos ou os serviços, é só responder por aqui.\n\nAbraço,\nRafael', data: '08/10/2026 15:30', lida: false },
+    { id: 2, de: 'ana', para: 'rafael', assunto: 'Dúvida sobre os sensores', texto: 'Oi, Rafael! Os sensores de presença vão ficar em todos os ambientes da casa?', data: '06/10/2026 10:12', lida: true },
+    { id: 1, de: 'rafael', para: 'ana', assunto: 'Bem-vinda ao seu projeto', texto: 'Olá, Ana! Aqui é o Rafael, o arquiteto responsável pelo seu projeto de automação. Vou usar este canal para tirar dúvidas e avisar sobre novidades.', data: '02/10/2026 09:00', lida: true }
+  ],
+
   historico: [
     { numero: '#3', data: '08/10/2026 14:10', quem: 'Rafael', versao: 'v7', resultado: '1 OK · 2 pendências · 1 análise técnica' },
     { numero: '#2', data: '05/10/2026 09:42', quem: 'Rafael', versao: 'v5', resultado: '4 pendências' },
@@ -72,7 +79,10 @@ const DADOS_INICIAIS = {
 function carregar() {
   const texto = localStorage.getItem(CHAVE);
   if (texto) {
-    return JSON.parse(texto);
+    const guardado = JSON.parse(texto);
+    // dados guardados antes de existir o canal de mensagens não têm "mensagens": usamos as iniciais
+    if (!guardado.mensagens) { guardado.mensagens = JSON.parse(JSON.stringify(DADOS_INICIAIS.mensagens)); }
+    return guardado;
   }
   return JSON.parse(JSON.stringify(DADOS_INICIAIS));   // (isso faz uma cópia dos dados iniciais)
 }

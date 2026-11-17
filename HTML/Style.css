@@ -114,8 +114,8 @@ main:not(:has(:target))>.view:first-child{display:block}
 .c-ins{grid-template-columns:200px 230px 110px 120px}
 .c-ins.row span{font-size:13px;line-height:16px}
 .c-ins.row span:first-child{font-weight:500}
-.c-mod{grid-template-columns:170px 100px 100px 190px 170px 110px auto;column-gap:16px}
-.c-pro{grid-template-columns:110px 520px 330px auto;column-gap:16px}
+.c-mod{grid-template-columns:170px 100px 100px 190px 170px 110px;column-gap:16px}
+.c-pro{grid-template-columns:110px 520px 330px;column-gap:16px}
 .c-res{grid-template-columns:140px 250px 250px 250px 100px;column-gap:16px}
 .c-his{grid-template-columns:90px 150px 130px 140px 420px;column-gap:16px}
 .note{font:400 12px/15px 'Inter',sans-serif;color:#99a1ad}
@@ -303,3 +303,30 @@ main:not(:has(:target))>.view:first-child{display:block}
 #flash{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:50}
 .aviso{padding:12px 18px;background:#14181f;color:#fff;border-radius:12px;font:500 13px/16px 'Inter',sans-serif;box-shadow:0 8px 24px rgba(13,18,26,.25)}
 button.btn{font-family:'Inter',sans-serif}
+
+.grupo{display:flex;gap:10px;flex:none}
+
+/* ===== login: a página só aparece depois de conferir o perfil ===== */
+body[data-perfil]{visibility:hidden}
+.strip .sair{margin-left:auto}
+
+/* ===== mensagens ===== */
+.btn.ativo{background:#ffc933;border-color:#ffc933}
+.caixa{display:flex;gap:20px;min-height:380px}
+.lista-msg{width:420px;flex:none;display:flex;flex-direction:column;border:1px solid #bfc4cc;border-radius:14px;overflow:hidden;align-self:flex-start;width:420px;max-height:520px;overflow-y:auto}
+.msg-item{display:flex;flex-direction:column;gap:3px;padding:14px 16px 14px 24px;border-bottom:1px solid #e0e3e8;cursor:pointer;position:relative}
+.msg-item:last-child{border-bottom:0}
+.msg-item b{font:500 13px/16px 'Inter',sans-serif}
+.msg-item span{font:400 12.5px/15px 'Inter',sans-serif;color:#5b6472}
+.msg-item small{font:400 11.5px/14px 'Inter',sans-serif;color:#99a1ad}
+.msg-item.naolida b{font-weight:600}
+.msg-item.naolida::before{content:"";position:absolute;left:10px;top:19px;width:8px;height:8px;border-radius:50%;background:#ffc933}
+.msg-item.aberta{background:#fff6d9}
+.msg-item:hover{background:#f4f5f7}
+.msg-item.aberta:hover{background:#fff6d9}
+.msg-vazio{padding:24px;font:400 13px/16px 'Inter',sans-serif;color:#99a1ad}
+.leitor-msg{flex:1;min-width:0;display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid #bfc4cc;border-radius:14px}
+.leitor-msg h2{font-size:20px;line-height:24px}
+.msg-texto{font:400 14px/1.5 'Inter',sans-serif;color:#14181f;padding-top:6px}
+textarea.inp{resize:vertical;min-height:140px;font:400 14px/1.45 'Inter',sans-serif;padding:13px 14px;border-radius:10px}
+@media (max-width:900px){.caixa{flex-direction:column}.lista-msg{width:100%}}

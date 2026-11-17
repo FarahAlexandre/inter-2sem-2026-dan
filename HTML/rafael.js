@@ -5,6 +5,7 @@ let ambienteEditado = -1;   // -1 = criando um ambiente novo; 0, 1, 2... = edita
 
 // ---------- Desenha as partes que só existem nesta página ----------
 function desenharPagina() {
+  desenharMensagens();
   desenharListaAmbientes();
   desenharAjustes();
 }
@@ -17,8 +18,7 @@ function desenharListaAmbientes() {
   for (let i = 0; i < dados.ambientes.length; i++) {
     const a = dados.ambientes[i];
     html += '<div class="env"><i style="background:' + a.cor + '"></i><b>' + esc(a.nome) + '</b>' +
-      '<span>' + a.dispositivos.length + ' dispositivos</span>' +
-      '<button type="button" class="btn e s" onclick="abrirAmbiente(' + i + ')">Editar</button></div>';
+      '<span>' + a.dispositivos.length + ' dispositivos</span></div>';
   }
   caixa.innerHTML = html;
 }

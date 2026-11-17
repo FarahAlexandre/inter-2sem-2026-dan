@@ -1,5 +1,27 @@
 // ===== comum.js — funções usadas por TODAS as páginas =====
 
+// ----- Login: cada página só abre para o seu perfil -----
+// Quem está logado fica guardado em "usuarioLogado" (veja login.js)
+function perfilLogado() {
+  return sessionStorage.getItem('usuarioLogado') || localStorage.getItem('usuarioLogado');
+}
+
+// Botão "Sair": esquece o login e volta para a página de login
+function sair() {
+  sessionStorage.removeItem('usuarioLogado');
+  localStorage.removeItem('usuarioLogado');
+  location.href = 'Pagina_de_login.html';
+}
+
+// Cada página diz qual é o seu perfil em <body data-perfil="...">.
+// Se quem está logado não for esse perfil, volta para o login. Senão, mostra a página.
+const perfilDaPagina = document.body.dataset.perfil;
+if (perfilDaPagina && perfilLogado() !== perfilDaPagina) {
+  location.replace('Pagina_de_login.html');
+} else {
+  document.body.style.visibility = 'visible';
+}
+
 // Atalho para pegar um elemento da página pelo id
 function pegar(id) {
   return document.getElementById(id);

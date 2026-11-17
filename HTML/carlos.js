@@ -38,8 +38,7 @@ function desenharModelos() {
   for (let i = 0; i < dados.modelos.length; i++) {
     const m = dados.modelos[i];
     html += '<div class="row c-mod"><span>' + esc(m.nome) + '</span><span>' + esc(m.fabricante) + '</span><span>' + esc(m.categoria) + '</span>' +
-      '<span>' + esc(m.funcoes) + '</span><span>' + esc(m.limites) + '</span><span>' + esc(m.protocolos.join(' · ')) + '</span>' +
-      '<button type="button" class="btn e" onclick="abrirModelo(' + i + ')">Editar</button></div>';
+      '<span>' + esc(m.funcoes) + '</span><span>' + esc(m.limites) + '</span><span>' + esc(m.protocolos.join(' · ')) + '</span></div>';
     if (i < dados.modelos.length - 1) { html += '<div class="line"></div>'; }
   }
   caixa.innerHTML = html;
@@ -53,8 +52,7 @@ function desenharProtocolos() {
     const p = dados.protocolos[i];
     const modelos = modelosDoProtocolo(p.nome);
     html += '<div class="row c-pro"><span>' + esc(p.nome) + '</span><span>' + esc(p.descricao) + '</span>' +
-      '<span>' + (modelos.length > 0 ? esc(modelos.join(' · ')) : '—') + '</span>' +
-      '<button type="button" class="btn e" onclick="abrirProtocolo(' + i + ')">Editar</button></div>';
+      '<span>' + (modelos.length > 0 ? esc(modelos.join(' · ')) : '—') + '</span></div>';
     if (i < dados.protocolos.length - 1) { html += '<div class="line"></div>'; }
   }
   caixa.innerHTML = html;
