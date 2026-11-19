@@ -32,6 +32,12 @@ function esc(texto) {
   return String(texto).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+// Deixa o nome de uma imagem no padrão (minúsculo, sem espaço e sem acento).
+// Serve para dados antigos já guardados no navegador, como "Sala.svg" ou "area de serviço.svg".
+function arquivoImagem(nome) {
+  return nome.toLowerCase().replace(/ç/g, 'c').replace(/ /g, '_');
+}
+
 // Transforma uma cor "#ffc933" em uma versão bem clarinha (para o fundo das etiquetas)
 function clarear(cor) {
   const r = parseInt(cor.slice(1, 3), 16);
@@ -88,7 +94,7 @@ function desenharDashboard() {
     totalDispositivos += a.dispositivos.length;
 
     html += '<article class="room">' +
-      '<div class="room-top"><span class="ic" style="background:' + a.cor + '"><img src="' + a.img + '" alt=""></span><span class="on-pill">Ativo</span></div>' +
+      '<div class="room-top"><span class="ic" style="background:' + a.cor + '"><img src="' + arquivoImagem(a.img) + '" alt=""></span><span class="on-pill">Ativo</span></div>' +
       '<div><h3>' + esc(a.nome) + '</h3><p>' + a.dispositivos.length + ' dispositivos associados</p></div>' +
       '<div class="tags"><div class="tag-row">' + tags + '</div></div>' +
       '</article>';

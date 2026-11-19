@@ -10,7 +10,7 @@ const ICONES = [
   { rotulo: 'Cozinha', img: 'cozinha.svg', cor: '#f2703c' },
   { rotulo: 'Quarto', img: 'quartos.svg', cor: '#8b5cf6' },
   { rotulo: 'Banheiro', img: 'banheiro.svg', cor: '#2aa198' },
-  { rotulo: 'Área de serviço', img: 'area de serviço.svg', cor: '#4c9a5b' }
+  { rotulo: 'Área de serviço', img: 'area_de_servico.svg', cor: '#4c9a5b' }
 ];
 
 const STATUS_OBRA = ['Não iniciado', 'Em andamento', 'Em verificação', 'Concluído'];
@@ -25,7 +25,7 @@ const DADOS_INICIAIS = {
     { nome: 'Suíte', img: 'quartos.svg', cor: '#5b5fef', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] },
     { nome: 'Quarto', img: 'quartos.svg', cor: '#8b5cf6', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] },
     { nome: 'Banheiro', img: 'banheiro.svg', cor: '#2aa198', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] },
-    { nome: 'Área de serviço', img: 'area de serviço.svg', cor: '#4c9a5b', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] }
+    { nome: 'Área de serviço', img: 'area_de_servico.svg', cor: '#4c9a5b', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] }
   ],
 
   // Catálogo técnico: cada modelo guarda os protocolos que ele aceita
