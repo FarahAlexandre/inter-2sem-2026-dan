@@ -224,8 +224,7 @@ main:not(:has(:target))>.view:first-child{display:block}
 .sit .lb b{font-weight:600}
 .sit i{display:block;height:7px;border-radius:999px;background:#f4f5f7}
 .sit u{display:block;height:7px;border-radius:999px;text-decoration:none;max-width:100%}
-
-/* ===== novas telas: editar protocolo, status da obra, cadastro, proposta ===== */
+/* ===== novas telas: status da obra, proposta ===== */
 .sw{display:flex;gap:8px;flex-wrap:wrap}
 .cks{display:flex;gap:8px;flex-wrap:wrap}
 .ck input{position:absolute;opacity:0;pointer-events:none}
@@ -242,9 +241,8 @@ main:not(:has(:target))>.view:first-child{display:block}
 .c-obra{grid-template-columns:260px 220px auto;column-gap:16px}
 .c-eq{grid-template-columns:320px 70px 150px 150px;column-gap:16px}
 .c-sv{grid-template-columns:260px 110px 70px 150px 150px;column-gap:16px}
-.c-prop{grid-template-columns:160px 130px 160px 140px auto;column-gap:16px}
-.c-eq.row,.c-sv.row,.c-prop.row,.c-obra.row{padding:9px 0}
-.c-eq.row span,.c-sv.row span,.c-prop.row span,.c-obra.row span{font-size:13px;line-height:16px}
+.c-eq.row,.c-sv.row,.c-obra.row{padding:9px 0}
+.c-eq.row span,.c-sv.row span,.c-obra.row span{font-size:13px;line-height:16px}
 .c-eq span:nth-child(n+2),.c-sv span:nth-child(n+3){text-align:right}
 .serv div b{min-width:78px;text-align:right}
 .resumo{display:flex;gap:16px;flex-wrap:wrap}
@@ -303,7 +301,6 @@ main:not(:has(:target))>.view:first-child{display:block}
 #flash{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:50}
 .aviso{padding:12px 18px;background:#14181f;color:#fff;border-radius:12px;font:500 13px/16px 'Inter',sans-serif;box-shadow:0 8px 24px rgba(13,18,26,.25)}
 button.btn{font-family:'Inter',sans-serif}
-
 .grupo{display:flex;gap:10px;flex:none}
 
 /* ===== login: a página só aparece depois de conferir o perfil ===== */
@@ -313,7 +310,7 @@ body[data-perfil]{visibility:hidden}
 /* ===== mensagens ===== */
 .btn.ativo{background:#ffc933;border-color:#ffc933}
 .caixa{display:flex;gap:20px;min-height:380px}
-.lista-msg{width:420px;flex:none;display:flex;flex-direction:column;border:1px solid #bfc4cc;border-radius:14px;overflow:hidden;align-self:flex-start;width:420px;max-height:520px;overflow-y:auto}
+.lista-msg{display:flex;flex-direction:column;border:1px solid #bfc4cc;border-radius:14px;align-self:flex-start;width:420px;flex:none;max-height:520px;overflow-y:auto}
 .msg-item{display:flex;flex-direction:column;gap:3px;padding:14px 16px 14px 24px;border-bottom:1px solid #e0e3e8;cursor:pointer;position:relative}
 .msg-item:last-child{border-bottom:0}
 .msg-item b{font:500 13px/16px 'Inter',sans-serif}

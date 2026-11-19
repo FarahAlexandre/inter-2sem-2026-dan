@@ -4,9 +4,9 @@
 
 // Cada linha é uma conta: login, senha, qual perfil ela abre e qual página
 const USUARIOS = [
-  { login: 'rafael@dan.com', senha: 'rafael123', perfil: 'rafael', pagina: 'Pagina_Rafael.html' },
-  { login: 'carlos@dan.com', senha: 'carlos123', perfil: 'carlos', pagina: 'Pagina_Carlos.html' },
-  { login: 'ana@dan.com', senha: 'ana123', perfil: 'ana', pagina: 'Pagina_Ana.html' }
+  { login: 'rafael@dan.com', senha: 'rafael123', perfil: 'rafael', pagina: 'pagina_rafael.html' },
+  { login: 'carlos@dan.com', senha: 'carlos123', perfil: 'carlos', pagina: 'pagina_carlos.html' },
+  { login: 'ana@dan.com', senha: 'ana123', perfil: 'ana', pagina: 'pagina_ana.html' }
 ];
 
 // Chamada quando a pessoa clica em "Entrar"

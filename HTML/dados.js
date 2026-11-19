@@ -6,7 +6,7 @@ const CHAVE = 'livingModelDados';   // nome da "gaveta" do navegador onde guarda
 
 // Ícones que podem ser escolhidos ao criar um ambiente
 const ICONES = [
-  { rotulo: 'Sala', img: 'Sala.svg', cor: '#ffc933' },
+  { rotulo: 'Sala', img: 'sala.svg', cor: '#ffc933' },
   { rotulo: 'Cozinha', img: 'cozinha.svg', cor: '#f2703c' },
   { rotulo: 'Quarto', img: 'quartos.svg', cor: '#8b5cf6' },
   { rotulo: 'Banheiro', img: 'banheiro.svg', cor: '#2aa198' },
@@ -20,7 +20,7 @@ const DADOS_INICIAIS = {
   cliente: { nome: 'Ana', email: '', endereco: 'Rua das Palmeiras, 245, São Paulo/SP', tipo: 'Casa', servico: 'Instalação padrão' },
 
   ambientes: [
-    { nome: 'Sala de estar', img: 'Sala.svg', cor: '#ffc933', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] },
+    { nome: 'Sala de estar', img: 'sala.svg', cor: '#ffc933', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] },
     { nome: 'Cozinha', img: 'cozinha.svg', cor: '#f2703c', dispositivos: ['Iluminação inteligente', 'Sensor de gás', 'Tomada inteligente'] },
     { nome: 'Suíte', img: 'quartos.svg', cor: '#5b5fef', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] },
     { nome: 'Quarto', img: 'quartos.svg', cor: '#8b5cf6', dispositivos: ['Iluminação inteligente', 'Sensor de Presença', 'Controle de cortina'] },

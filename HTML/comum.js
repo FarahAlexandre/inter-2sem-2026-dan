@@ -10,14 +10,14 @@ function perfilLogado() {
 function sair() {
   sessionStorage.removeItem('usuarioLogado');
   localStorage.removeItem('usuarioLogado');
-  location.href = 'Pagina_de_login.html';
+  location.href = 'pagina_de_login.html';
 }
 
 // Cada página diz qual é o seu perfil em <body data-perfil="...">.
 // Se quem está logado não for esse perfil, volta para o login. Senão, mostra a página.
 const perfilDaPagina = document.body.dataset.perfil;
 if (perfilDaPagina && perfilLogado() !== perfilDaPagina) {
-  location.replace('Pagina_de_login.html');
+  location.replace('pagina_de_login.html');
 } else {
   document.body.style.visibility = 'visible';
 }
