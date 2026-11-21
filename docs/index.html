@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAN — Automação residencial do projeto à instalação</title>
+  <meta name="description" content="O DAN reúne arquiteto, técnico instalador e morador em um só lugar: ambientes, dispositivos, proposta, obra e mensagens.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="pagina">
+
+  <!-- ===== Topo: logo, menu e botão Entrar ===== -->
+  <header class="topo" id="inicio">
+    <a href="#inicio" class="logo-link"><img src="logo_dan_branco.jpeg" alt="DAN"></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#como">Como funciona</a></li>
+        <li><a href="#perfis">Perfis</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a class="botao menu-entrar" href="pagina_de_login.html">Entrar <span aria-hidden="true">›</span></a>
+    </nav>
+    <a class="botao topo-entrar" href="pagina_de_login.html">Entrar <span aria-hidden="true">›</span></a>
+    <button class="menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===== Destaque principal ===== -->
+    <section class="destaque">
+      <div class="quadriculado" aria-hidden="true"></div>
+      <h1 class="titulo-grande">Automatize sua casa do projeto à instalação com o DAN</h1>
+      <p>O DAN reúne arquiteto, técnico instalador e morador em um só lugar: ambientes, dispositivos, proposta, obra e mensagens, tudo organizado e fácil de acompanhar.</p>
+      <a class="botao" href="pagina_de_login.html">Acessar o DAN <span aria-hidden="true">›</span></a>
+    </section>
+
+    <!-- ===== Cards de recursos ===== -->
+    <section class="cards" id="recursos" aria-label="Recursos do DAN">
+      <article class="card card-a">
+        <div class="selos"><span>Wi-Fi</span><span>Z</span><span>Zb</span></div>
+        <h3 class="titulo">Catálogo técnico</h3>
+        <p>Modelos, limites de operação e protocolos validados antes de instalar.</p>
+      </article>
+
+      <article class="card card-b">
+        <img src="casa_inteligente.png" alt="Casa inteligente com ícones de automação">
+      </article>
+
+      <article class="card card-c">
+        <strong class="numero titulo">5</strong>
+        <p>Protocolos de comunicação: Wi-Fi, Z-Wave, Zigbee, Bluetooth e Modbus.</p>
+      </article>
+
+      <article class="card card-d">
+        <img src="imagem_login.jpg" alt="">
+        <span class="etiqueta">Projetos</span>
+        <div class="projeto"><i></i>Residência de Ana</div>
+      </article>
+
+      <article class="card card-e">
+        <strong class="numero titulo">3</strong>
+        <p>Perfis com acesso próprio: arquiteto, técnico instalador e morador.</p>
+      </article>
+
+      <article class="card card-f">
+        <h3 class="titulo">Do projeto à obra, todos no mesmo canal</h3>
+        <svg viewBox="0 0 520 268" preserveAspectRatio="xMaxYMid slice" fill="none" aria-hidden="true">
+          <circle cx="470" cy="190" r="120" stroke="#fff" stroke-opacity=".8" stroke-width="1.6"/>
+          <circle cx="470" cy="190" r="190" stroke="#fff" stroke-opacity=".7" stroke-width="1.6"/>
+          <circle cx="470" cy="190" r="260" stroke="#fff" stroke-opacity=".6" stroke-width="1.6"/>
+        </svg>
+        <span class="avatar av-r" title="Rafael · Arquiteto">R</span>
+        <span class="avatar av-c" title="Carlos · Técnico">C</span>
+        <span class="avatar av-a" title="Ana · Moradora">A</span>
+      </article>
+    </section>
+
+    <!-- ===== Como funciona ===== -->
+    <section class="secao" id="como">
+      <span class="sobretitulo">Como funciona</span>
+      <h2 class="titulo">Três etapas, um único fluxo</h2>
+      <div class="grade3">
+        <article class="etapa"><div class="num">1</div><h3 class="titulo">Projete</h3><p>O arquiteto cadastra o cliente e o imóvel, monta os ambientes e os dispositivos e gera a proposta com preços.</p></article>
+        <article class="etapa"><div class="num">2</div><h3 class="titulo">Instale</h3><p>O técnico consulta a planta, cadastra dispositivos no catálogo, atualiza o status da obra e aprova as etapas concluídas.</p></article>
+        <article class="etapa"><div class="num">3</div><h3 class="titulo">Acompanhe</h3><p>A moradora vê a proposta, os sensores do projeto e fala com o arquiteto pelo canal de mensagens.</p></article>
+      </div>
+    </section>
+
+    <!-- ===== Perfis ===== -->
+    <section class="secao" id="perfis">
+      <span class="sobretitulo">Perfis</span>
+      <h2 class="titulo">Uma experiência para cada pessoa</h2>
+      <div class="grade3">
+        <article class="perfil p-amarelo"><small>Arquiteto</small><h3 class="titulo">Rafael</h3>
+          <ul><li>Cadastra e edita cliente e imóvel</li><li>Gerencia ambientes e dispositivos</li><li>Exporta a proposta com preço</li></ul></article>
+        <article class="perfil p-verde"><small>Técnico instalador</small><h3 class="titulo">Carlos</h3>
+          <ul><li>Mantém o catálogo e os protocolos</li><li>Atualiza o status da obra</li><li>Registra ajustes para o arquiteto</li></ul></article>
+        <article class="perfil p-lilas"><small>Moradora</small><h3 class="titulo">Ana</h3>
+          <ul><li>Vê a proposta e os serviços</li><li>Consulta os sensores da casa</li><li>Conversa com o arquiteto</li></ul></article>
+      </div>
+    </section>
+
+    <!-- ===== Perguntas frequentes (abrem e fecham sem JavaScript) ===== -->
+    <section class="secao" id="faq">
+      <span class="sobretitulo">FAQ</span>
+      <h2 class="titulo">Perguntas frequentes</h2>
+      <div class="perguntas">
+        <details><summary>O que é o DAN?</summary><p>Uma plataforma que organiza o projeto de automação residencial, do desenho à instalação, para quem projeta, instala e mora.</p></details>
+        <details><summary>Preciso criar uma conta?</summary><p>Cada perfil entra com login e senha próprios e vê apenas a sua área.</p></details>
+        <details><summary>A moradora consegue alterar o projeto?</summary><p>Não. Ela acompanha a proposta, os sensores e os serviços, e conversa com o arquiteto.</p></details>
+        <details><summary>Quais protocolos são aceitos?</summary><p>Wi-Fi, Z-Wave, Zigbee, Bluetooth e Modbus, e o técnico pode cadastrar novos.</p></details>
+      </div>
+    </section>
+
+    <!-- ===== Chamada final ===== -->
+    <section class="chamada">
+      <h2 class="titulo">Pronto para ver seu projeto ganhar vida?</h2>
+      <p>Entre no DAN e acompanhe cada etapa da automação da sua casa.</p>
+      <a class="botao botao-amarelo" href="pagina_de_login.html">Entrar no DAN <span aria-hidden="true">›</span></a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <img src="logo_dan_branco.jpeg" alt="DAN">
+    <span>© <span id="ano">2026</span> DAN · Living Model</span>
+  </footer>
+</div>
+
+<script src="landing.js"></script>
+</body>
+</html>
