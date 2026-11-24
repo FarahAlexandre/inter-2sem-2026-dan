@@ -29,6 +29,7 @@ function desenharPagina() {
   desenharModelos();
   desenharProtocolos();
   desenharObra();
+  desenharInstalacoes();
 }
 
 function desenharModelos() {
@@ -270,6 +271,60 @@ function registrarAjuste() {
   pegar('ajuste-texto').value = '';
   salvarTudo();
   aviso('Ajuste registrado — o arquiteto já pode vê-lo.');
+}
+
+// ---------- Consulta de instalação ----------
+const CLASSE_STATUS = { 'Compatível': 'ok', 'Verificar limite': 'warn', 'Falta informação': 'info' };
+
+function desenharInstalacoes() {
+  const caixa = pegar('linhas-instalacao');
+  if (!caixa) { return; }
+  let html = '';
+  for (let i = 0; i < dados.instalacoes.length; i++) {
+    const x = dados.instalacoes[i];
+    html += '<div class="row c-ins"><span>' + esc(x.ambiente) + '</span><span>' + esc(x.dispositivo) + '</span><span>' + esc(x.protocolo) +
+      '</span><span class="pill ' + (CLASSE_STATUS[x.status] || 'neu') + '">' + esc(x.status) + '</span></div>';
+    if (i < dados.instalacoes.length - 1) { html += '<div class="line"></div>'; }
+  }
+  caixa.innerHTML = html;
+}
+
+// Abre a janela "Adicionar dispositivo"
+function abrirInstalacao() {
+  const ambientes = [];
+  for (let i = 0; i < dados.ambientes.length; i++) { ambientes.push(dados.ambientes[i].nome); }
+  preencherSelect('inst-amb', ambientes);
+  preencherSelect('inst-modelo', nomesModelos());
+  pegar('inst-erro').textContent = '';
+  trocarModeloInstalacao();
+  abrirModal('modal-instalacao');
+}
+
+// Quando o técnico troca o dispositivo: o campo Protocolo mostra só os que o modelo aceita
+function trocarModeloInstalacao() {
+  const modelo = dados.modelos[pegar('inst-modelo').selectedIndex];
+  preencherSelect('inst-protocolo', modelo.protocolos);
+  pegar('inst-info').textContent = modelo.fabricante + ' · ' + modelo.categoria + ' · Limites: ' + modelo.limites;
+}
+
+function salvarInstalacao() {
+  const ambiente = dados.ambientes[pegar('inst-amb').selectedIndex];
+  const modelo = dados.modelos[pegar('inst-modelo').selectedIndex];
+  const protocolo = pegar('inst-protocolo').value;
+
+  if (protocolo === '') {
+    pegar('inst-erro').textContent = 'Este dispositivo não tem protocolo cadastrado. Edite-o na aba Catálogo Técnico.';
+    return;
+  }
+  // se o catálogo não tem limite de operação, avisa o técnico na tabela
+  const status = modelo.limites === '—' ? 'Verificar limite' : 'Compatível';
+
+  dados.instalacoes.push({ ambiente: ambiente.nome, dispositivo: modelo.nome, protocolo: protocolo, status: status });
+  ambiente.dispositivos.push(modelo.nome);   // aparece também nos cards do Dashboard
+
+  salvarTudo();
+  fecharModal('modal-instalacao');
+  aviso(modelo.nome + ' adicionado em ' + ambiente.nome + '.');
 }
 
 // ---------- Ao abrir a página ----------

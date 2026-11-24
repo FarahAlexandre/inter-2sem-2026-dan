@@ -44,9 +44,18 @@
     <!-- ===== Cards de recursos ===== -->
     <section class="cards" id="recursos" aria-label="Recursos do DAN">
       <article class="card card-a">
-        <div class="selos"><span>Wi-Fi</span><span>Z</span><span>Zb</span></div>
-        <h3 class="titulo">Catálogo técnico</h3>
-        <p>Modelos, limites de operação e protocolos validados antes de instalar.</p>
+        <span class="icone" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#2f6fe0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="22" cy="29" rx="14" ry="10.5"/>
+            <path d="M36 27h4v6h-4M14 20l-2-5 6 3M16 39v4M29 39v4M19 22h6"/>
+            <circle cx="29" cy="26" r="1" fill="#2f6fe0"/>
+            <circle cx="24" cy="9" r="6" fill="#ffc933" stroke="#e0a000"/>
+            <path d="M24 6.5v5" stroke="#8c6b05" stroke-width="2"/>
+          </svg>
+        </span>
+        <h3 class="titulo">Economia no projeto</h3>
+        <i class="traco"></i>
+        <p>Planejamento integrado para evitar compras desnecessárias e reduzir desperdícios na instalação.</p>
       </article>
 
       <article class="card card-b">
@@ -54,31 +63,72 @@
       </article>
 
       <article class="card card-c">
-        <strong class="numero titulo">5</strong>
-        <p>Protocolos de comunicação: Wi-Fi, Z-Wave, Zigbee, Bluetooth e Modbus.</p>
+        <div class="cab">
+          <strong class="numero titulo">5</strong>
+          <svg class="ic-grande" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="32" cy="20" r="4"/>
+            <path d="M32 24L20 57M32 24L44 57M25 43h14M22 52h20"/>
+            <path d="M23 13a13 13 0 0 0 0 14M41 13a13 13 0 0 1 0 14M17 8a21 21 0 0 0 0 24M47 8a21 21 0 0 1 0 24"/>
+          </svg>
+        </div>
+        <i class="traco"></i>
+        <h3 class="titulo">Protocolos integrados</h3>
+        <p>Wi-Fi, Z-Wave, Zigbee, Bluetooth e Modbus em um só ecossistema.</p>
       </article>
 
       <article class="card card-d">
         <img src="imagem_login.jpg" alt="">
         <span class="etiqueta">Projetos</span>
-        <div class="projeto"><i>Residências</i></div>
+        <div class="projeto"><span>Residências<br>inteligentes</span></div>
       </article>
 
       <article class="card card-e">
-        <strong class="numero titulo">3</strong>
-        <p>Perfis com acesso próprio: arquiteto, técnico instalador e morador.</p>
+        <div class="cab">
+          <strong class="numero titulo">3</strong>
+          <svg class="ic-grande" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="32" cy="20" r="7"/>
+            <path d="M20 47c0-8 5-13 12-13s12 5 12 13"/>
+            <circle cx="12" cy="27" r="5"/>
+            <path d="M3 47c0-6 3-10 9-10"/>
+            <circle cx="52" cy="27" r="5"/>
+            <path d="M61 47c0-6-3-10-9-10"/>
+          </svg>
+        </div>
+        <i class="traco"></i>
+        <h3 class="titulo">Perfis conectados</h3>
+        <p>Arquiteto, técnico instalador e morador trabalhando com informações alinhadas.</p>
       </article>
 
       <article class="card card-f">
-        <h3 class="titulo">Do projeto à obra, todos no mesmo canal</h3>
-        <svg viewBox="0 0 520 268" preserveAspectRatio="xMaxYMid slice" fill="none" aria-hidden="true">
-          <circle cx="470" cy="190" r="120" stroke="#fff" stroke-opacity=".8" stroke-width="1.6"/>
-          <circle cx="470" cy="190" r="190" stroke="#fff" stroke-opacity=".7" stroke-width="1.6"/>
-          <circle cx="470" cy="190" r="260" stroke="#fff" stroke-opacity=".6" stroke-width="1.6"/>
+        <div class="texto">
+          <h3 class="titulo">Mais controle, menos retrabalho.</h3>
+          <i class="traco"></i>
+          <p>Do planejamento à instalação, tudo conectado em um só lugar.</p>
+        </div>
+        <svg class="orbita" viewBox="0 0 440 290" fill="none" aria-hidden="true">
+          <circle cx="260" cy="150" r="70" stroke="#fff" stroke-opacity=".9" stroke-width="1.6"/>
+          <circle cx="260" cy="150" r="115" stroke="#fff" stroke-opacity=".8" stroke-width="1.6"/>
+          <circle cx="260" cy="150" r="165" stroke="#fff" stroke-opacity=".7" stroke-width="1.6"/>
+          <!-- casa no centro -->
+          <rect x="220" y="110" width="80" height="80" rx="24" fill="#0d1a3a"/>
+          <path transform="translate(260 150)" d="M-20 4L0 -16L20 4M-14 -2V18H14V-2M-5 18V6H5V18" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- wi-fi -->
+          <circle cx="165" cy="75" r="30" fill="#1e90ff"/>
+          <path d="M151 71c8-7 20-7 28 0M156 77c5-4 13-4 18 0" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="165" cy="84" r="2.6" fill="#fff"/>
+          <!-- engrenagem -->
+          <circle cx="165" cy="215" r="26" fill="#ffc107"/>
+          <g transform="translate(165 215)" stroke="#fff" stroke-width="3.5" stroke-linecap="round">
+            <circle r="8"/>
+            <path d="M0-12v-4M0 12v4M-12 0h-4M12 0h4M8.5-8.5l3-3M-8.5 8.5l-3 3M8.5 8.5l3 3M-8.5-8.5l-3-3"/>
+          </g>
+          <!-- escudo -->
+          <circle cx="340" cy="235" r="28" fill="#1aa6c9"/>
+          <g transform="translate(340 235)" stroke="#fff" stroke-width="3" stroke-linejoin="round">
+            <path d="M0-13L11-9V-1C11 7 6 11 0 14C-6 11-11 7-11-1V-9Z"/>
+            <circle cy="0" r="2.5" fill="#fff" stroke="none"/>
+          </g>
         </svg>
-        <span class="avatar av-r" title="Rafael · Arquiteto">R</span>
-        <span class="avatar av-c" title="Carlos · Técnico">C</span>
-        <span class="avatar av-a" title="Ana · Moradora">A</span>
       </article>
     </section>
 

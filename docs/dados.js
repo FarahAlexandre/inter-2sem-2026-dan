@@ -46,6 +46,14 @@ const DADOS_INICIAIS = {
     { nome: 'Modbus', descricao: 'Protocolo industrial para controladores.', situacao: 'Ativo' }
   ],
 
+  // Informações de instalação (aba "Consulta de Instalação" do Carlos)
+  instalacoes: [
+    { ambiente: 'Sala de estar', dispositivo: 'Sensor de presença', protocolo: 'Z-Wave', status: 'Compatível' },
+    { ambiente: 'Cozinha', dispositivo: 'Sensor de gás', protocolo: 'Wi-Fi', status: 'Compatível' },
+    { ambiente: 'Quarto', dispositivo: 'Luminária de cabeceira', protocolo: 'Bluetooth', status: 'Verificar limite' },
+    { ambiente: 'Banheiro', dispositivo: 'Controle de chuveiro', protocolo: 'Modbus', status: 'Falta informação' }
+  ],
+
   ajustes: [
     { onde: 'Quarto — Luminária de cabeceira', texto: 'Sensor sem limite de operação cadastrado no catálogo.', quem: 'Carlos · há 2 dias', revisado: false },
     { onde: 'Banheiro — Controle de chuveiro', texto: 'Gateway Modbus não está previsto no projeto.', quem: 'Carlos · há 1 dia', revisado: false },
@@ -82,6 +90,8 @@ function carregar() {
     const guardado = JSON.parse(texto);
     // dados guardados antes de existir o canal de mensagens não têm "mensagens": usamos as iniciais
     if (!guardado.mensagens) { guardado.mensagens = JSON.parse(JSON.stringify(DADOS_INICIAIS.mensagens)); }
+    // dados guardados antes de existir "instalacoes" não têm essa lista: usamos as iniciais
+    if (!guardado.instalacoes) { guardado.instalacoes = JSON.parse(JSON.stringify(DADOS_INICIAIS.instalacoes)); }
     return guardado;
   }
   return JSON.parse(JSON.stringify(DADOS_INICIAIS));   // (isso faz uma cópia dos dados iniciais)
