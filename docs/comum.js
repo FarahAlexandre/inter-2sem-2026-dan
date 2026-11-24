@@ -133,18 +133,53 @@ function desenharHistorico() {
   caixa.innerHTML = html;
 }
 
-// ----- Planta baixa: o Rafael envia, o Carlos consulta -----
+// ----- Plantas baixas: o Rafael envia (uma ou várias), o Carlos consulta -----
+// As plantas ficam numa lista guardada no navegador, na gaveta "plantas".
+let plantaPadrao = null;   // desenho padrão da página, usado quando ainda não há nenhuma planta
+
+function carregarPlantas() {
+  try {
+    const texto = localStorage.getItem('plantas');
+    if (texto) { return JSON.parse(texto); }
+    const antiga = localStorage.getItem('planta');      // versão antiga: uma planta só
+    if (antiga) { return [JSON.parse(antiga)]; }
+  } catch (erro) { }
+  return [];
+}
+
+function guardarPlantas(lista) {
+  localStorage.setItem('plantas', JSON.stringify(lista));
+  localStorage.removeItem('planta');                    // a lista nova substitui a antiga
+}
+
+// Botão "Remover" (só aparece para o Rafael)
+function removerPlanta(indice) {
+  const lista = carregarPlantas();
+  lista.splice(indice, 1);
+  guardarPlantas(lista);
+  mostrarPlanta();
+  aviso('Planta removida.');
+}
+
 function mostrarPlanta() {
   const area = pegar('area-planta');
   if (!area) { return; }
-  const texto = localStorage.getItem('planta');
-  if (!texto) { return; }                      // ainda não enviaram: fica o desenho padrão
-  const planta = JSON.parse(texto);
-  if (planta.tipo.startsWith('image')) {
-    area.innerHTML = '<img src="' + planta.url + '" alt="Planta baixa" style="max-width:100%;border-radius:12px">';
-  } else {
-    area.innerHTML = '<embed src="' + planta.url + '" type="application/pdf" style="width:100%;height:480px">';
+  if (plantaPadrao === null) { plantaPadrao = area.innerHTML; }
+
+  const plantas = carregarPlantas();
+  if (plantas.length === 0) { area.innerHTML = plantaPadrao; return; }   // ainda não enviaram: fica o desenho padrão
+
+  let html = '';
+  for (let i = 0; i < plantas.length; i++) {
+    const p = plantas[i];
+    const remover = perfilDaPagina === 'rafael'
+      ? '<button type="button" class="btn e s" onclick="removerPlanta(' + i + ')">Remover</button>' : '';
+    const conteudo = (p.tipo || '').startsWith('image')
+      ? '<img src="' + p.url + '" alt="' + esc(p.nome || 'Planta baixa') + '" style="max-width:100%;border-radius:12px">'
+      : '<embed src="' + p.url + '" type="application/pdf" style="width:100%;height:480px">';
+    html += '<div class="planta-item"><div class="planta-cab"><b>Planta ' + (i + 1) + ' · ' + esc(p.nome || 'sem nome') + '</b>' + remover + '</div>' + conteudo + '</div>';
   }
+  area.innerHTML = html;
 }
 
 // ----- Desenha tudo que a página atual tiver -----

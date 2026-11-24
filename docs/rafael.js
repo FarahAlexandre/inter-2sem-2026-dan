@@ -209,22 +209,32 @@ function executarVerificacao() {
   aviso('Verificação executada.');
 }
 
-// ---------- Planta baixa ----------
-// Quando o Rafael escolhe um arquivo, guardamos no navegador para o Carlos ver
+// ---------- Plantas baixas ----------
+// O Rafael pode escolher um ou vários arquivos de uma vez; todos entram na lista para o Carlos ver
+function lerArquivo(arquivo) {
+  return new Promise(function (resolver) {
+    const leitor = new FileReader();
+    leitor.onload = function () { resolver({ url: leitor.result, tipo: arquivo.type, nome: arquivo.name }); };
+    leitor.onerror = function () { resolver(null); };
+    leitor.readAsDataURL(arquivo);
+  });
+}
+
 function importarPlanta(campo) {
-  const arquivo = campo.files[0];
-  if (!arquivo) { return; }
-  const leitor = new FileReader();
-  leitor.onload = function () {
+  const arquivos = Array.from(campo.files);
+  campo.value = '';                      // permite escolher o mesmo arquivo de novo depois
+  if (arquivos.length === 0) { return; }
+
+  Promise.all(arquivos.map(lerArquivo)).then(function (lidas) {
+    const novas = lidas.filter(function (p) { return p !== null; });
     try {
-      localStorage.setItem('planta', JSON.stringify({ url: leitor.result, tipo: arquivo.type, nome: arquivo.name }));
+      guardarPlantas(carregarPlantas().concat(novas));
       mostrarPlanta();
-      aviso('Planta enviada — o técnico já pode consultá-la.');
+      aviso(novas.length === 1 ? 'Planta enviada — o técnico já pode consultá-la.' : novas.length + ' plantas enviadas — o técnico já pode consultá-las.');
     } catch (erro) {
-      aviso('Arquivo grande demais para guardar no navegador.');
+      aviso('Arquivos grandes demais para guardar no navegador. Tente menos plantas ou arquivos menores.');
     }
-  };
-  leitor.readAsDataURL(arquivo);
+  });
 }
 
 // ---------- Ao abrir a página ----------

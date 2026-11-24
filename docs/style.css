@@ -327,3 +327,9 @@ body[data-perfil]{visibility:hidden}
 .msg-texto{font:400 14px/1.5 'Inter',sans-serif;color:#14181f;padding-top:6px}
 textarea.inp{resize:vertical;min-height:140px;font:400 14px/1.45 'Inter',sans-serif;padding:13px 14px;border-radius:10px}
 @media (max-width:900px){.caixa{flex-direction:column}.lista-msg{width:100%}}
+
+/* ===== plantas baixas (várias) ===== */
+#area-planta{display:flex;flex-direction:column;gap:16px}
+.planta-item{display:flex;flex-direction:column;gap:10px;padding:14px;background:#f4f5f7;border:1px solid #bfc4cc;border-radius:14px}
+.planta-cab{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.planta-cab b{font:600 13px/16px 'Inter',sans-serif}
